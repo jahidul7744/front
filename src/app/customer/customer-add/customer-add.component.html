@@ -1,18 +1,28 @@
-<p>customer-add works!</p>
-<form action="submit_customer.php" method="post">
-    <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+<div class="form">
 
-    <label for="mobile">Mobile:</label>
-    <input type="tel" id="mobile" name="mobile" required><br><br>
+<form class="form-container" [formGroup]="customerRegister" (submit)="onRegisterUser()">
+    <h2>Register</h2>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" formControlName = "name" required placeholder="Enter your name" >
+    </div>
 
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob" required><br><br>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" formControlName = "email" required placeholder="Enter your email">
+    </div>
 
-    <button type="submit">Submit</button>
-    <button routerLink="">Customer List</button>
+    <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="tel" id="mobile" name="mobile" class="form-control" formControlName = "mobile" required pattern="[0-9]{10}" placeholder="Enter your mobile number">
+    </div>
+
+    <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" class="form-control" formControlName = "dob" required>
+    </div>
+
+    <button type="submit" class="btn-submit" >Submit</button>
 </form>
-
+</div>
