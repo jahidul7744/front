@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerService} from "../../service/customer.service";
 
 @Component({
   selector: 'app-customer-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor() { }
+  customerList:any[]=[];
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    this.getCustomer();
   }
 
+  getCustomer(){
+    this.customerService.getCustomerList(1,1).subscribe(data=>{
+      this.customerList = data.sort((a: { id:number }, b: { id:number }) => a.id-b.id);
+    })
+  }
 }

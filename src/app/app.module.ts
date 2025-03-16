@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { ItemAddComponent } from './item/item-add/item-add.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {CustomerService} from "./service/customer.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
