@@ -20,4 +20,12 @@ export class CustomerListComponent implements OnInit {
       this.customerList = data.sort((a: { id:number }, b: { id:number }) => a.id-b.id);
     })
   }
+  deleteCustomer(id: number) {
+    this.customerService.deleteCustomer(id).subscribe(data=>{
+      this.getCustomer();
+    })
+
+
+  }
+
 }

@@ -22,5 +22,8 @@ export class CustomerService {
     return this.httpClient.post<any>(`${this.url}/search-list`,{page,size});
   }
 
+  deleteCustomer(id:number):Observable<any> {
+    return this.httpClient.delete(`${this.url}/${id}`,{responseType: 'text' as 'json'});
+  }
 
 }
