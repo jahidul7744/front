@@ -11,6 +11,10 @@ import { ItemListComponent } from './item/item-list/item-list.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {CustomerService} from "./service/customer.service";
 import {HttpClientModule} from "@angular/common/http";
+import { NavbarComponent } from './navbar/navbar.component';
+import { TableComponent } from './table/table.component';
+import { OpdComponent } from './opd/opd.component';
+import { JusttableComponent } from './justtable/justtable.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import {HttpClientModule} from "@angular/common/http";
     CustomerAddComponent,
     CustomerListComponent,
     ItemAddComponent,
-    ItemListComponent
+    ItemListComponent,
+    NavbarComponent,
+    TableComponent,
+    OpdComponent,
+    JusttableComponent
   ],
   imports: [
     BrowserModule,
